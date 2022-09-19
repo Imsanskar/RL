@@ -1,0 +1,6 @@
+env/
+tictactoe_multithread.cpp
+log.csv
+output.png
+run.stats
+.vscode/
