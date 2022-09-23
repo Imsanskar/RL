@@ -105,7 +105,7 @@ struct Board {
     }
 };
 
-uint8_t get_max_move(Board board, std::unordered_map<uint64_t, float> &value_table, const uint8_t marker = X) {
+uint8_t get_max_move(Board board, ValueTable &value_table, const uint8_t marker = X) {
     auto moves = board.get_possible_moves();
     uint8_t best_move = moves[0];
     const int size = moves.size();
@@ -226,7 +226,7 @@ void game(ValueTable value_table) {
     }
 }
 
-void log_value_table(const std::unordered_map<uint64_t, float> &value_table) {
+void log_value_table(const ValueTable &value_table) {
     FILE *file = fopen("log.csv", "w");
     for (const auto& key_value: value_table) {
         fprintf(file, "%d, %f\n", key_value.first, key_value.second);
