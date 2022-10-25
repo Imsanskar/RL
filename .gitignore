@@ -6,3 +6,4 @@ run.stats
 .vscode/
 .ipynb_checkpoints/
 k_armed_bandit.py
+a.out

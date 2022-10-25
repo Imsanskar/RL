@@ -6,7 +6,7 @@
 #include <iostream>
 #include <pthread.h>
 
-
+//TODO: FIX for O case game
 typedef std::unordered_map<uint64_t, float> ValueTable;
 #define EPSILON 0.1
 
@@ -181,7 +181,7 @@ void game(ValueTable value_table) {
     Board b;
     uint8_t marker;
     bool is_game_over = false;
-    bool is_x_turn = true;
+    bool is_x_turn = false;
     while (!is_game_over) {
         if (is_x_turn) {
             marker = X;
@@ -236,7 +236,7 @@ void log_value_table(const ValueTable &value_table) {
 }
 
 int main() {
-    auto value_table = train(0.3f);
-    // log_value_table(value_table);
-    // game(value_table);
+    auto value_table = train(0.1f);
+    log_value_table(value_table);
+    game(value_table);
 }
